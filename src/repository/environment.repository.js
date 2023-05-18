@@ -7,4 +7,5 @@ async function getAllDataDB(){
     return result;
 }
 
+
 module.exports = {getAllDataDB}
