@@ -3,7 +3,8 @@ const {
   getAllData,
   getDataById,
   createData,
-  deleteDataById
+  deleteDataById,
+  updateDataById
 } = require("../service/environment.service");
 let route = express.Router();
 
@@ -30,6 +31,17 @@ route.post("/", async (req, res) => {
     res.send(data);
   } catch (error) {}
 });
+
+route.put("/:id", async(req,res)=>{
+try {
+  const {id} = req.params;
+  const {label, category, priotity} = req.body;
+  const data = await updateDataById(id, label, category, priotity);
+  res.send(data);
+} catch (error) {
+  res.send(`ошибка при обновлении: ${error.message}`)
+}
+})
 
 route.delete("/:id",async (req,res)=>{
   try {
