@@ -7,5 +7,10 @@ app.use(bodyParser.json());
 
 app.use("/environment", route);
 
+/* console.log(route); */
+
+app.use((er, req, res, next)=>{
+    res.send(er.message);
+})
 
 module.exports = app
