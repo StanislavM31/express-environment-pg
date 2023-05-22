@@ -1,4 +1,4 @@
-const pool = require("../db");
+const pool = require('../db');
 
 async function getAllDataDB() {
   const client = await pool.connect();

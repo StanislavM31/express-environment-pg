@@ -1,10 +1,4 @@
-const {
-  getAllDataDB,
-  getDataByIdDB,
-  createDataDB,
-  deleteDataDB,
-  updateDataDB,
-} = require("../repository/environment.repository");
+const { getAllDataDB, getDataByIdDB, createDataDB, deleteDataDB, updateDataDB } = require('../repository/environment.repository');
 
 async function getAllData() {
   const data = await getAllDataDB();
