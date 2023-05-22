@@ -6,7 +6,7 @@ const {
   deleteDataById,
   updateDataById
 } = require("../service/environment.service");
-const {isValidBody, } = require("../helper/validation");
+const {isValidId, isValidBody} = require("../helper/validation");
 const buildResponse = require("../helper/buildResponse")
 let route = express.Router();
 
@@ -19,7 +19,7 @@ route.get("/", async (req, res) => {
   }
 });
 
-route.get("/:id", async (req, res) => {
+route.get("/:id", isValidId, async (req, res) => {
   try {
     const { id } = req.params;
     const data = await getDataById(id);

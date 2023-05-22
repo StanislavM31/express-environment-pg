@@ -16,4 +16,4 @@ function isValidBody(req,res, next){
 
     next();
 }
-module.exports = {isValidBody}
+module.exports = {isValidId, isValidBody}
