@@ -36,6 +36,8 @@ async function deleteDataDB(id) {
   const rez = (await client.query(sql1)).rows;
   return rez;
 }
+
+
 module.exports = {
   getAllDataDB,
   getDataByIdDB,
